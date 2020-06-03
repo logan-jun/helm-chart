@@ -1,7 +1,7 @@
 # The base hadoop image to use for all components.
 # See this repo for image build details: https://github.com/Comcast/kube-yarn/tree/master/image
 image:
-  repository: gradiant/hdfs
+  repository: hdfs
   tag: 2.7.7
   pullPolicy: IfNotPresent
 
@@ -48,7 +48,7 @@ dataNode:
 
 webhdfs:
     enabled: false
-    
+
 ingress:
   nameNode:
     enabled: false
