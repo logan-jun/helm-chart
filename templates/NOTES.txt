@@ -4,7 +4,10 @@
 2. Create a port-forward to the hdfs manager UI:
    kubectl port-forward -n {{ .Release.Namespace }} {{ include "hadoop.fullname" . }}-namenode-0 50070:50070
 
+3. You can run included hadoop tests like this:
+   kubectl exec -n {{ .Release.Namespace }} -it {{ include "hadoop.fullname" . }}-yarn-nm-0 -- /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-{{ .Values.hadoopVersion }}-tests.jar TestDFSIO -write -nrFiles 5 -fileSize 128MB -resFile /tmp/TestDFSIOwrite.txt
+
+
    Then open the ui in your browser:
 
    open http://localhost:50070
-

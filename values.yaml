@@ -5,6 +5,11 @@ image:
   tag: 2.7.7
   pullPolicy: IfNotPresent
 
+imageYarn:
+  repository: danisla/hadoop
+  tag: 2.9.0
+  pullPolicy: IfNotPresent
+
 # The version of the hadoop libraries being used in the image.
 hadoopVersion: 2.9.0
 
