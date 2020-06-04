@@ -76,4 +76,4 @@ spec:
       volumes:
       - name: hadoop-config
         configMap:
-          name: {{ include "hadoop.fullname" . }}
+          name: {{ include "hadoop.fullname" . }}-hadoop
