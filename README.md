@@ -2,9 +2,9 @@
 # HDFS Chart
 
 ** This chart is a modification of the original (https://github.com/helm/charts/tree/master/stable/hadoop) **
-** This version removes yarn manager and provides advanced hadoop configuration through env variables ** 
+** This version removes yarn manager and provides advanced hadoop configuration through env variables **
 
-[Hadoop HDFS](https://hadoop.apache.org/) is a distributed file system designed to run on commodity hardware. 
+[Hadoop HDFS](https://hadoop.apache.org/) is a distributed file system designed to run on commodity hardware.
 
 ## Installing the Chart
 
@@ -25,7 +25,7 @@ $ helm install --name hdfs gradiant/hdfs
 To install the chart with persistent volumes:
 
 ```
-$ helm install --name hadoop 
+$ helm install --name hadoop
   --set persistence.nameNode.enabled=true \
   --set persistence.nameNode.storageClass=standard \
   --set persistence.dataNode.enabled=true \
@@ -58,7 +58,7 @@ For more details ensure to see `values.yaml` file directly.
 | httpfs.port | int | `14000` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"gradiant/hadoop-base"` |  |
-| image.tag | string | `"2.7.7"` |  |
+| image.tag | string | `"2.9.0"` |  |
 | ingress.dataNode.annotations | object | `{}` |  |
 | ingress.dataNode.enabled | bool | `false` |  |
 | ingress.dataNode.hosts[0] | string | `"hdfs-datanode.local"` |  |
