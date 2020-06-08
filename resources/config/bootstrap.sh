@@ -1,6 +1,6 @@
 #!/bin/bash
 
-: ${HADOOP_HOME:=/usr/local/hadoop}
+: ${HADOOP_HOME:=/opt/hadoop}
 
 . $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
