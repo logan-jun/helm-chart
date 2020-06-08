@@ -6,9 +6,7 @@
 
 # Directory to find config artifacts
 CONFIG_DIR="/tmp/hadoop-config"
-YARN_LOCAL_DIR="/var/lib/hadoop-yarn/cache/nm-local-dir"
-YARN_LOCAL_LOG_DIR="/var/log/hadoop-yarn/containers"
-YARN_REMOTE_LOG_DIR="/var/log/hadoop-yarn/app"
+
 # Copy config files from volume mount
 
 for f in slaves core-site.xml hdfs-site.xml mapred-site.xml yarn-site.xml; do
@@ -65,15 +63,6 @@ EOM
   cp ${CONFIG_DIR}/start-yarn-nm.sh $HADOOP_HOME/sbin/
   cd $HADOOP_HOME/sbin
   chmod +x start-yarn-nm.sh
-  mkdir /.$YARN_LOCAL_DIR
-  mkdir /.$YARN_LOCAL_LOG_DIR
-  mkdir /.$YARN_REMOTE_LOG_DIR
-  chown -R hdfs:hadoop /.$YARN_LOCAL_DIR
-  chmod -R 755 /.$YARN_LOCAL_DIR
-  chown -R hdfs:hadoop /.$YARN_LOCAL_LOG_DIR
-  chmod -R 755 /.$YARN_LOCAL_LOG_DIR
-  chown -R hdfs:hadoop /.$YARN_REMOTE_LOG_DIR
-  chmod -R 755 /.$YARN_REMOTE_LOG_DIR
   #  wait up to 30 seconds for resourcemanager
   (while [[ $count -lt 15 && -z `curl -sf http://{{ include "hadoop.fullname" . }}-yarn-rm:8088/ws/v1/cluster/info` ]]; do ((count=count+1)) ; echo "Waiting for {{ include "hadoop.fullname" . }}-yarn-rm" ; sleep 2; done && [[ $count -lt 15 ]])
   [[ $? -ne 0 ]] && echo "Timeout waiting for yarn-rm, exiting." && exit 1
