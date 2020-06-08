@@ -8,8 +8,8 @@ icon: http://hadoop.apache.org/images/hadoop-logo.jpg
 maintainers:
 - email: cgiraldo@gradiant.org
   name: cgiraldo
-metadata:
 name: hdfs
 sources:
 - https://github.com/apache/hadoop
 version: 0.1.9
+metadata:
