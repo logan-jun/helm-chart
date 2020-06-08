@@ -38,10 +38,9 @@ if [[ $2 == "datanode" ]]; then
     $HADOOP_HOME/sbin/hadoop-daemon.sh start datanode
 fi
 
-if [[ "${HOSTNAME}" =~ "yarn-rm" ]]; then
+if [[ $2 == "yarn-rm" ]]; then
   cp ${CONFIG_DIR}/start-yarn-rm.sh $HADOOP_HOME/sbin/
   cd $HADOOP_HOME/sbin
-  mkdir test1
   chmod +x start-yarn-rm.sh
   ./start-yarn-rm.sh
 fi
