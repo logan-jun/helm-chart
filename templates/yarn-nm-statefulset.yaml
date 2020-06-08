@@ -50,8 +50,8 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - name: yarn-nm
-        image: "{{ .Values.imageYarn.repository }}:{{ .Values.imageYarn.tag }}"
-        imagePullPolicy: {{ .Values.imageYarn.pullPolicy | quote }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         ports:
         - containerPort: 8088
           name: web
