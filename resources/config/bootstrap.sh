@@ -60,6 +60,13 @@ if [[ "${HOSTNAME}" =~ "yarn-nm" ]]; then
 EOM
   echo '</configuration>' >> $HADOOP_HOME/etc/hadoop/yarn-site.xml
   cp ${CONFIG_DIR}/start-yarn-nm.sh $HADOOP_HOME/sbin/
+
+  mkdir -p /./var/lib/hadoop-yarn/cache/nm-local-dir
+  mkdir -p /./var/log/hadoop-yarn/containers
+  mkdir -p /./var/log/hadoop-yarn/app
+  chown -R hdfs:hadoop /./var/lib/hadoop-yarn/cache/nm-local-dir
+  chown -R hdfs:hadoop /./var/log/hadoop-yarn/containers
+  chown -R hdfs:hadoop /./var/log/hadoop-yarn/app
   cd $HADOOP_HOME/sbin
   chmod +x start-yarn-nm.sh
   #  wait up to 30 seconds for resourcemanager
