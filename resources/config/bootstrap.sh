@@ -46,6 +46,7 @@ if [[ "${HOSTNAME}" =~ "yarn-rm" ]]; then
 fi
 
 if [[ "${HOSTNAME}" =~ "yarn-nm" ]]; then
+  mkdir -p /var/lib/hadoop-yarn
   mkdir -p /var/lib/hadoop-yarn/cache/nm-local-dir
   mkdir -p /var/log/hadoop-yarn/containers
   mkdir -p /var/log/hadoop-yarn/app

@@ -3,11 +3,11 @@ entries:
   hdfs:
   - apiVersion: v1
     appVersion: 2.9.0
-    created: "2020-06-09T13:24:37.680124+09:00"
+    created: "2020-06-09T13:34:04.733902+09:00"
     description: The Apache Hadoop software library is a framework that allows for
       the distributed processing of large data sets across clusters of computers using
       simple programming models.
-    digest: a7b03894b60d799e0915405275d4a123b21f8f082569094f349aca2023d41852
+    digest: 40863f4830056bd7c8dbc6c8e88ea1fa2ea02f534d88d310db3cef48294a13e7
     home: https://hadoop.apache.org/
     icon: http://hadoop.apache.org/images/hadoop-logo.jpg
     maintainers:
@@ -19,4 +19,4 @@ entries:
     urls:
     - https://logan-jun.github.io/helm-chart/hdfs-0.1.9.tgz
     version: 0.1.9
-generated: "2020-06-09T13:24:37.676248+09:00"
+generated: "2020-06-09T13:34:04.729124+09:00"
