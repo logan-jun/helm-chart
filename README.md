@@ -58,7 +58,7 @@ For more details ensure to see `values.yaml` file directly.
 | httpfs.port | int | `14000` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"gradiant/hadoop-base"` |  |
-| image.tag | string | `"2.7.7"` |  |
+| image.tag | string | `"2.9.0"` |  |
 | ingress.dataNode.annotations | object | `{}` |  |
 | ingress.dataNode.enabled | bool | `false` |  |
 | ingress.dataNode.hosts[0] | string | `"hdfs-datanode.local"` |  |
