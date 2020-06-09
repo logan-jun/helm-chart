@@ -5,6 +5,11 @@ image:
   tag: latest
   pullPolicy: IfNotPresent
 
+imageYarn:
+  repository: hansl2004/yarn-image
+  tag: latest
+  pullPolicy: IfNotPresent
+
 # The version of the hadoop libraries being used in the image.
 hadoopVersion: 2.9.0
 

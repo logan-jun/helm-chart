@@ -46,13 +46,6 @@ if [[ "${HOSTNAME}" =~ "yarn-rm" ]]; then
 fi
 
 if [[ "${HOSTNAME}" =~ "yarn-nm" ]]; then
-  mkdir -p /var/lib/hadoop-yarn
-  mkdir -p /var/lib/hadoop-yarn/cache/nm-local-dir
-  mkdir -p /var/log/hadoop-yarn/containers
-  mkdir -p /var/log/hadoop-yarn/app
-  chown -R hdfs:hadoop /var/lib/hadoop-yarn/cache/nm-local-dir
-  chown -R hdfs:hadoop /var/log/hadoop-yarn/containers
-  chown -R hdfs:hadoop /var/log/hadoop-yarn/app
   sed -i '/<\/configuration>/d' $HADOOP_HOME/etc/hadoop/yarn-site.xml
   cat >> $HADOOP_HOME/etc/hadoop/yarn-site.xml <<- EOM
   <property>
