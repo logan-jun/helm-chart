@@ -26,7 +26,7 @@ if [[ $2 == "namenode" ]]; then
     $HADOOP_HOME/bin/hdfs namenode -format -force -nonInteractive
     fi
     apt-get update
-    apt-get -y install openssh-service
+    apt-get -y install openssh-server
     service ssh restart
     $HADOOP_HOME/sbin/hadoop-daemon.sh start namenode
 fi
