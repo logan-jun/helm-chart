@@ -25,6 +25,9 @@ if [[ $2 == "namenode" ]]; then
     mkdir -p /dfs/name
     $HADOOP_HOME/bin/hdfs namenode -format -force -nonInteractive
     fi
+    apt-get update
+    apt-get -y install openssh-service
+    service ssh restart
     $HADOOP_HOME/sbin/hadoop-daemon.sh start namenode
 fi
 if [[ $2 == "datanode" ]]; then
