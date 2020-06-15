@@ -3,7 +3,7 @@
 <configuration>
   <property>
     <name>yarn.resourcemanager.hostname</name>
-    <value>{{ include "hadoop.fullname" . }}-yarn-rm</value>
+    <value>127.0.0.1</value>
   </property>
 
   <!-- Bind to all interfaces -->
