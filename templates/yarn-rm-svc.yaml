@@ -13,7 +13,6 @@ spec:
     name: web
   - port: 8032
     name: spark
-  clusterIP: None
   selector:
     app.kubernetes.io/name: {{ include "hadoop.name" . }}
     app.kubernetes.io/component: yarn-rm
